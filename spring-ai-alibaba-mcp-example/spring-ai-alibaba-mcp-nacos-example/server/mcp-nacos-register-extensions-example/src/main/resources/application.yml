@@ -1,5 +1,5 @@
 server:
-  port: 21000
+  port: 22000
 
 spring:
   main:
@@ -9,7 +9,7 @@ spring:
   ai:
     mcp:
       server:
-        name: webflux-mcp-server
+        name: webflux-mcp-server-yingzi
         version: 1.0.0
         type: ASYNC  # Recommended for reactive applications
         instructions: "This reactive server provides time information tools and resources"
@@ -26,11 +26,14 @@ spring:
     alibaba:
       mcp:
         nacos:
-          namespace: 4ad3108b-4d44-43d0-9634-3c1ac4850c8c
+          namespace: 8237f998-2f01-4cf8-bfc1-64012d09cce2
           server-addr: 127.0.0.1:8848
           username: nacos
           password: nacos
           register:
             enabled: true
             service-group: mcp-server
-            service-name: webflux-mcp-server
+            service-name: webflux-mcp-server-yingzi
+    toolcalling:
+      weather:
+        api-key: ${WEATHER_API_KEY}
